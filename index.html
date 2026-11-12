@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17243a">
+  <meta name="description" content="A personal 90-day growth and accountability companion.">
+  <title>Project: Becoming — The Masterpiece</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">MP</div>
+      <div><strong>PROJECT: BECOMING</strong><small>THE MASTERPIECE · 90 DAYS</small></div>
+    </div>
+    <button id="installBtn" class="button button-light hidden">Install app</button>
+  </header>
+
+  <main class="shell">
+    <section class="welcome">
+      <p class="eyebrow" id="todayLabel">YOUR DAILY RESET</p>
+      <h1>Become with<br><em>intention.</em></h1>
+      <p class="intro">Small faithful steps. Deliberate growth. Meaningful impact.</p>
+      <div class="welcome-meta">
+        <span id="dayCount">DAY 1 OF 90</span>
+        <span id="dateText"></span>
+      </div>
+      <div class="progress-track"><div id="overallBar" class="progress-fill"></div></div>
+      <p class="progress-caption"><strong id="overallPercent">0%</strong> of today's goals completed</p>
+    </section>
+
+    <nav class="tabs" aria-label="Main navigation">
+      <button class="tab active" data-tab="today">Today</button>
+      <button class="tab" data-tab="growth">Growth</button>
+      <button class="tab" data-tab="study">Study</button>
+      <button class="tab" data-tab="skincare">Skincare</button>
+      <button class="tab" data-tab="journal">Journal</button>
+    </nav>
+
+    <section id="today" class="panel active">
+      <div class="section-heading">
+        <div><p class="eyebrow">YOUR DAILY PLAN</p><h2>Today's goals</h2></div>
+        <button id="resetDayBtn" class="text-button">Refresh today's goals ↻</button>
+      </div>
+      <p class="muted">Your daily checklist refreshes automatically when the calendar date changes. Your history remains saved on this device.</p>
+      <div id="dailyGoals" class="goal-list"></div>
+      <div class="card quote-card"><p>“The hand of the diligent shall bear rule.”</p><small>PROVERBS 12:24 · A reminder to practise consistency.</small></div>
+      <div class="section-heading compact"><div><p class="eyebrow">DAILY ACCOUNTABILITY</p><h2>9 PM check-in</h2></div></div>
+      <div class="card">
+        <p class="muted">Set a daily phone alarm for 9:00 PM. When you open this app, record your reflection below.</p>
+        <button class="button" id="goJournal">Open daily reflection</button>
+      </div>
+    </section>
+
+    <section id="growth" class="panel">
+      <p class="eyebrow">THE EIGHT PILLARS</p><h2>Build with balance</h2>
+      <p class="muted">Your programme develops knowledge, character, capacity, excellence and impact.</p>
+      <div id="pillars" class="pillar-grid"></div>
+      <div class="card roadmap">
+        <h3>Your 90-day roadmap</h3>
+        <div class="roadmap-row"><b>Days 1–30</b><span>FOUNDATION</span><p>Build routines, self-awareness and consistency.</p></div>
+        <div class="roadmap-row"><b>Days 31–60</b><span>EXPANSION</span><p>Deepen knowledge, skills and practical capacity.</p></div>
+        <div class="roadmap-row"><b>Days 61–90</b><span>APPLICATION</span><p>Apply what you have learned and evaluate your growth.</p></div>
+      </div>
+    </section>
+
+    <section id="study" class="panel">
+      <p class="eyebrow">LEARN · THINK · APPLY</p><h2>Study centre</h2>
+      <p class="muted">A starting reading list and your first-week learning plan.</p>
+      <div class="card">
+        <h3>Week 1 focus</h3>
+        <div class="study-item"><b>Self-awareness and intentional development</b><p>Write a personal vision statement and complete an identity audit.</p></div>
+        <div class="study-item"><b>Habits, discipline and consistency</b><p>Create a personal habit constitution. Read chapters 1–4 of <i>Atomic Habits</i>.</p></div>
+        <div class="study-item"><b>Intellectual development</b><p>Write a 400–500 word article on a Nigerian development or governance issue.</p></div>
+        <div class="study-item"><b>Spiritual maturity</b><p>Reflect on Proverbs 4, James 1, Galatians 5, Colossians 3 and Matthew 25.</p></div>
+        <div class="study-item"><b>Emotional intelligence</b><p>Reflect on emotional awareness, empathy and responsible responses.</p></div>
+        <div class="study-item"><b>Communication and financial intelligence</b><p>Prepare a three-minute speech and a hypothetical student budget.</p></div>
+        <div class="study-item"><b>Leadership and entrepreneurship</b><p>Draft a one-page business concept and complete your weekly evaluation.</p></div>
+      </div>
+      <div class="card">
+        <h3>Reading shelf</h3>
+        <ul class="reading-list">
+          <li><i>Atomic Habits</i> — James Clear</li>
+          <li><i>The 7 Habits of Highly Effective People</i> — Stephen R. Covey</li>
+          <li><i>The Psychology of Money</i> — Morgan Housel</li>
+          <li><i>Mere Christianity</i> — C. S. Lewis</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Learning log</h3>
+        <label for="learningNote">What did you study or discover today?</label>
+        <textarea id="learningNote" rows="4" placeholder="Write your learning notes here..."></textarea>
+        <button id="saveLearning" class="button">Save learning note</button>
+        <p id="learningStatus" class="status" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="skincare" class="panel">
+      <p class="eyebrow">CARE · CONSISTENCY</p><h2>Skincare tracker</h2>
+      <p class="muted">Keep it simple and consistent. Body lotion is for your body; use facial products as directed on their labels.</p>
+      <div class="card">
+        <div class="section-heading compact"><h3>Morning routine</h3><span class="pill">AM</span></div>
+        <div id="morningSkin" class="check-list"></div>
+      </div>
+      <div class="card">
+        <div class="section-heading compact"><h3>Evening routine</h3><span class="pill">PM</span></div>
+        <div id="eveningSkin" class="check-list"></div>
+      </div>
+      <div class="card">
+        <h3>Product checklist</h3>
+        <div id="products" class="check-list"></div>
+        <p class="small muted">Optional additions can wait until your basic routine is comfortable and consistent.</p>
+      </div>
+    </section>
+
+    <section id="journal" class="panel">
+      <p class="eyebrow">PAUSE · REFLECT · RESET</p><h2>Daily journal</h2>
+      <p class="muted">Your entries are saved on this device and organised by date.</p>
+      <div class="card journal-card">
+        <label for="reflection">What did I learn today?</label><textarea id="reflection" rows="3" placeholder="A lesson, idea or insight..."></textarea>
+        <label for="achievement">What am I proud of accomplishing?</label><textarea id="achievement" rows="2" placeholder="It can be a small win."></textarea>
+        <label for="challenge">What challenged me, and what can I do differently?</label><textarea id="challenge" rows="3" placeholder="Be honest and constructive."></textarea>
+        <label for="tomorrow">What are my priorities for tomorrow?</label><textarea id="tomorrow" rows="2" placeholder="Choose a few meaningful priorities."></textarea>
+        <label for="rating">How would I rate today?</label>
+        <div class="rating-row"><input id="rating" type="range" min="1" max="10" value="7"><strong><span id="ratingValue">7</span>/10</strong></div>
+        <button id="saveJournal" class="button">Save today's reflection</button>
+        <p id="journalStatus" class="status" aria-live="polite"></p>
+      </div>
+      <div class="card">
+        <h3>Recent reflections</h3><div id="journalHistory" class="history-list"></div>
+      </div>
+      <div class="card">
+        <h3>Your progress data</h3>
+        <p class="muted small">Your records stay in this browser on this device. Export a backup regularly, especially before changing devices or clearing browser data.</p>
+        <div class="button-row"><button id="exportBtn" class="button button-outline">Export backup</button><label class="button button-outline file-label" for="importFile">Import backup</label><input id="importFile" type="file" accept="application/json" hidden></div>
+        <button id="clearBtn" class="text-button danger">Clear all app data</button>
+      </div>
+    </section>
+
+    <footer><span>ABBA'S MASTERPIECE</span><span>KNOWLEDGE · CHARACTER · CAPACITY · IMPACT</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
